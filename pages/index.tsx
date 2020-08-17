@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { useQuery, gql } from "@apollo/client";
-import styles from "../styles/Home.module.css";
+import styles from "styles/Home.module.css";
 import { print } from "graphql/language/printer";
 import { format } from "date-fns";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prismStyle } from "react-syntax-highlighter/styles/prism/funky";
-
+import prismStyle from "react-syntax-highlighter/styles/prism/pojoaque";
+import SvgComponent from "./logo";
 const ResumeQuery = gql`
 	query {
 		bio {
@@ -37,36 +37,35 @@ export default function Home() {
 	if (loading)
 		return (
 			<header>
-				<h1>Ryuki Kuga</h1>
+				<SvgComponent />
 				<h2>Loading...</h2>
 			</header>
 		);
 
 	const { bio, positions } = data;
-
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Create Next App</title>
+				<title>ryuki-gql-resume</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<header>
-				<h1>{bio.name}</h1>
+			<header className={styles.header}>
+				<SvgComponent />
 				<h2>{bio.tagline}</h2>
 			</header>
 			<div className={styles.split}>
 				<div className={styles.left}>
 					<h2>Contact</h2>
 					<p>
-						<strong>Email</strong>
+						<strong>Email</strong>{" "}
 						<a href={`malito:${bio.email}`}>{bio.email}</a>
 					</p>
 					<p>
-						<strong>Github</strong>
+						<strong>Github</strong>{" "}
 						<a href={bio.github}>{bio.github.replace("https://", "")}</a>
 					</p>
 					<p>
-						<strong>LinkedIn</strong>
+						<strong>LinkedIn</strong>{" "}
 						<a href={bio.linkedin}>{bio.linkedin.replace("https://", "")}</a>
 					</p>
 					<SyntaxHighlighter language="graphql" style={prismStyle}>
@@ -74,7 +73,7 @@ export default function Home() {
 					</SyntaxHighlighter>
 				</div>
 				<div className={styles.right}>
-					<h2>Experience</h2>
+					<h1>Experience</h1>
 					{positions.map((position) => {
 						console.log(position);
 						const length = [
@@ -85,7 +84,7 @@ export default function Home() {
 							.join(" ");
 						return (
 							<div key={position.id}>
-								<h3>{position.title}</h3>
+								<h2>{position.title}</h2>
 								<p className={styles.light}>
 									{position.company} | {position.location}
 								</p>
