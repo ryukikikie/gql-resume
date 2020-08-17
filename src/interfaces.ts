@@ -11,5 +11,6 @@ export interface PositionInterface {
 	startDate: string;
 	endDate?: string;
 	location: string;
+	company: string;
 	achievements: string[];
 }

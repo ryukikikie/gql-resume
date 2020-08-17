@@ -6,6 +6,7 @@ export const Position = objectType({
 		t.id("id");
 		t.string("title");
 		t.string("company");
+		t.string("location");
 		t.date("startDate", {
 			description: "When I started at this position",
 			resolve: (position) => new Date(position.startDate),
@@ -13,7 +14,7 @@ export const Position = objectType({
 		t.date("endDate", {
 			nullable: true,
 			resolve: (position) =>
-				position.startDate ? new Date(position.startDate) : null,
+				position.endDate ? new Date(position.endDate) : null,
 		});
 		t.int("years", ({ endDate, startDate }) =>
 			differenceInYears(

@@ -20,7 +20,10 @@ type Position {
   company: String!
   endDate: Date
   id: ID!
+  location: String!
   months: Int!
+
+  """When I started at this position"""
   startDate: Date!
   title: String!
   years: Int!
