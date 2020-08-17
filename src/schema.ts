@@ -1,7 +1,7 @@
 import { makeSchema } from "@nexus/schema";
 import path from "path";
 import * as types from "./allTypes";
-console.log(process.env.NODE_ENV);
+
 export const schema = makeSchema({
 	types,
 	outputs: {
@@ -13,7 +13,7 @@ export const schema = makeSchema({
 			{
 				alias: "faces",
 				source: path.join(process.cwd(), "src", "interfaces.ts"),
-				typeMatch: (type) => new RegExp(`${type}Interface`),
+				typeMatch: (type) => new RegExp(`(${type}Interface)`),
 			},
 		],
 		backingTypeMap: {
