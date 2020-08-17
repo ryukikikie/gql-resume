@@ -1,7 +1,7 @@
 import { queryType, idArg } from "@nexus/schema";
 import { data } from "src/data";
-import { Bio } from "./index";
-import { Position } from "./Position";
+import { Bio, Position } from "./index";
+
 export const Query = queryType({
 	definition(t) {
 		t.field("bio", {
