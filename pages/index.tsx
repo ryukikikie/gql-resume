@@ -36,7 +36,7 @@ export default function Home() {
 	}
 	if (loading)
 		return (
-			<header>
+			<header className={styles.loading}>
 				<SvgComponent />
 				<h2>Loading...</h2>
 			</header>
