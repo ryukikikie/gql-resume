@@ -17,8 +17,8 @@ export const data = {
 			employmentType: "FULL_TIME",
 			location: "Tokyo, Japan",
 			achievements: [
-				"🛠Maintained and refactored in-house learning management system as a full-stack JavaScript engineer",
-				"📚Guided students throughout a full-time course, translated materials(🇬🇧->🇯🇵) and taught algorithm lectures",
+				"🛠Maintained and refactored in-house learning management system as a full-stack JavaScript web developer",
+				"📚Guided students throughout a full-time course, translated materials(🇬🇧↔🇯🇵) and taught algorithm lectures",
 			],
 		},
 		{
