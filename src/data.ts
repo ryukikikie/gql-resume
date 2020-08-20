@@ -5,6 +5,7 @@ export const data = {
 		email: "ryukikikie@email.com",
 		github: "https://github.com/ryukikikie",
 		linkedin: "https://linkedin.com/in/ryukikikie",
+		medium: "https://medium.com/@ryukikikie",
 	},
 	skills: ["Japanese", "Anime"],
 	positions: [

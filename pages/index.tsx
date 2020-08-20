@@ -4,7 +4,7 @@ import styles from "styles/Home.module.css";
 import { print } from "graphql/language/printer";
 import { format } from "date-fns";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import prismStyle from "react-syntax-highlighter/styles/prism/pojoaque";
+import prismStyle from "react-syntax-highlighter/styles/prism/base16-ateliersulphurpool.light";
 import SvgComponent from "./logo";
 const ResumeQuery = gql`
 	query {
@@ -14,6 +14,7 @@ const ResumeQuery = gql`
 			linkedin
 			github
 			email
+			medium
 		}
 		positions {
 			id
@@ -68,7 +69,11 @@ export default function Home() {
 						<strong>LinkedIn</strong>{" "}
 						<a href={bio.linkedin}>{bio.linkedin.replace("https://", "")}</a>
 					</p>
-					<SyntaxHighlighter language="graphql" style={prismStyle}>
+					<p>
+						<strong>Medium</strong>{" "}
+						<a href={bio.medium}>{bio.medium.replace("https://", "")}</a>
+					</p>
+					<SyntaxHighlighter language="sql" style={prismStyle}>
 						{print(ResumeQuery)}
 					</SyntaxHighlighter>
 				</div>

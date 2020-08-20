@@ -6,6 +6,7 @@ type Bio {
   email: String!
   github: URL!
   linkedin: URL!
+  medium: URL!
   name: String!
   tagline: String!
 }

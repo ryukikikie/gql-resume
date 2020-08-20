@@ -4,6 +4,7 @@ export interface BioInterface {
 	email: string;
 	github: string;
 	linkedin: string;
+	medium: string;
 }
 export interface PositionInterface {
 	id: string;

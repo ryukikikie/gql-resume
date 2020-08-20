@@ -60,6 +60,7 @@ export interface NexusGenFieldTypes {
     email: string; // String!
     github: NexusGenScalars['URL']; // URL!
     linkedin: NexusGenScalars['URL']; // URL!
+    medium: NexusGenScalars['URL']; // URL!
     name: string; // String!
     tagline: string; // String!
   }

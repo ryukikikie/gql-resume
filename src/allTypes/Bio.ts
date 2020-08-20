@@ -8,5 +8,6 @@ export const Bio = objectType({
 		t.string("email");
 		t.url("github", (bio) => new URL(bio.github));
 		t.url("linkedin", (bio) => new URL(bio.linkedin));
+		t.url("medium", (bio) => new URL(bio.medium));
 	},
 });
