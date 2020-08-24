@@ -31,7 +31,7 @@ export const data = {
 			employmentType: "PART_TIME",
 			location: "Tokyo, Japan",
 			achievements: [
-				"👨‍🏫Teaching a class of average 10 students JavaScript fundamentals to advanced concepts",
+				"👨‍🏫Teaching a class of average 10 students JavaScript fundamentals to advanced concepts both in English and Japanese",
 			],
 		},
 	],
