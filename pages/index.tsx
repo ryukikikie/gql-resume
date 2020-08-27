@@ -38,7 +38,6 @@ export default function Home() {
 	if (loading)
 		return (
 			<header className={styles.loading}>
-				<SvgComponent />
 				<h2>Loading...</h2>
 			</header>
 		);
@@ -51,7 +50,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<header className={styles.header}>
-				<SvgComponent />
+				<h1>{bio.name}</h1>
 				<h2>{bio.tagline}</h2>
 			</header>
 			<div className={styles.split}>

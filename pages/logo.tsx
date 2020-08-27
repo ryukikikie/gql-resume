@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgComponent(props) {
+function Logo(props) {
 	return (
 		<svg
 			viewBox="0 0 300 225.688"
@@ -54,4 +54,4 @@ function SvgComponent(props) {
 	);
 }
 
-export default SvgComponent;
+export default Logo;
