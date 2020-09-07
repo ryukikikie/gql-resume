@@ -11,6 +11,8 @@ import { lightTheme, darkTheme } from "../components/Themes";
 import Cookie from "js-cookie";
 import { parseCookies } from "../utils/parseCookies";
 import React from "react";
+import Layout from "../layouts/Layout";
+
 const ResumeQuery = gql`
 	query {
 		bio {
@@ -36,15 +38,6 @@ const ResumeQuery = gql`
 `;
 
 export default function Home({ props }) {
-	const [theme, setTheme] = React.useState(() => props.initialThemeValue);
-	React.useEffect(() => {
-		console.log(theme, "inside ");
-		Cookie.set("theme", theme);
-		console.log(Cookie.get("theme"));
-	}, [Cookie.get("theme")]);
-	const themeToggler = () => {
-		theme === "light" ? setTheme("dark") : setTheme("light");
-	};
 	const { data, error, loading } = useQuery(ResumeQuery);
 	if (error) {
 		return <span>Error... oops!</span>;
@@ -58,8 +51,7 @@ export default function Home({ props }) {
 
 	const { bio, positions } = data;
 	return (
-		<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-			<GlobalStyles />
+		<Layout home>
 			<Head>
 				<title>ryuki-gql-resume</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -67,7 +59,6 @@ export default function Home({ props }) {
 			<header className={styles.header}>
 				<h1>{bio.name}</h1>
 				<h2>{bio.tagline}</h2>
-				<button onClick={themeToggler}>Switch Theme</button>
 			</header>
 			<div className={styles.split}>
 				<div className={styles.left}>
@@ -124,10 +115,6 @@ export default function Home({ props }) {
 					})}
 				</div>
 			</div>
-		</ThemeProvider>
+		</Layout>
 	);
 }
-Home.getInitialProps = async ({ req }) => {
-	const cookies = parseCookies(req);
-	return { props: { initialThemeValue: cookies.theme } };
-};
