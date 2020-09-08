@@ -5,7 +5,7 @@ import { print } from "graphql/language/printer";
 import { format } from "date-fns";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import prismStyle from "react-syntax-highlighter/styles/prism/base16-ateliersulphurpool.light";
-import SvgComponent from "./logo";
+import DarkModeToggle from "../components/DarkModeToggle";
 const ResumeQuery = gql`
 	query {
 		bio {
@@ -52,6 +52,7 @@ export default function Home() {
 			<header className={styles.header}>
 				<h1>{bio.name}</h1>
 				<h2>{bio.tagline}</h2>
+				<DarkModeToggle />
 			</header>
 			<div className={styles.split}>
 				<div className={styles.left}>
