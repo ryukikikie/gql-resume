@@ -1,5 +1,5 @@
 # GraphQL powered resume
-### All the data shown about my professional experience is fetched from the graphQL server at localhost:3000/graphql
+### GraphQL server available at localhost:3000/graphql
 
 ## Getting Started
 
