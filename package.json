@@ -21,6 +21,7 @@
     "path": "^0.12.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-feather": "^2.0.8",
     "react-motion": "^0.5.2",
     "react-syntax-highlighter": "^13.4.0",
     "use-dark-mode": "^2.3.1"
