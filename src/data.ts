@@ -24,14 +24,14 @@ export const data = {
 		},
 		{
 			id: "2",
-			title: "Foundations Teacher",
+			title: "Tech Mentor",
 			company: "Code Chrysalis",
 			startDate: "2020-05-01",
 			endDate: null,
 			employmentType: "PART_TIME",
 			location: "Tokyo, Japan",
 			achievements: [
-				"👨‍🏫Teaching a class of average 10 students JavaScript fundamentals to advanced concepts both in English and Japanese",
+				"👨‍🏫Teaching a class of average 10 students JavaScript fundamentals to advanced concepts both in English and Japanese(Live coding included)",
 			],
 		},
 	],
