@@ -35,7 +35,10 @@ body.dark-mode {
 		}
 	}
 }
-
+.dark-mode-toggle button:active,
+.dark-mode-toggle button:focus {
+	outline: none;
+}
 .navbar {
 	position: fixed;
 	top: 0;
