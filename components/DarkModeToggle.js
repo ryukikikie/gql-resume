@@ -1,7 +1,5 @@
 import React from "react";
 import { Moon, Sun } from "react-feather";
-
-import Toggle from "./Toggle";
 import useDarkMode from "use-dark-mode";
 
 const DarkModeToggle = () => {
