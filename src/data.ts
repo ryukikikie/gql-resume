@@ -35,4 +35,5 @@ export const data = {
 			],
 		},
 	],
+	projects: [],
 };
