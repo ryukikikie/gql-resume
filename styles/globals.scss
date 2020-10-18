@@ -13,7 +13,10 @@ a {
 	color: #7a63ff;
 	text-decoration: none;
 }
-
+.yin-yang {
+	align-items: center;
+	justify-content: center;
+}
 body.light-mode {
 	background-color: #fff;
 	color: #333;
@@ -74,4 +77,46 @@ body.dark-mode .content button {
 		transition: color 0.3s ease;
 	}
 }
+.header {
+	text-align: center;
+	padding: 2rem 0;
+	background: #bb6aeb;
+}
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.split {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem;
+}
+.left {
+	padding: 1rem;
+	width: 25%;
+}
+.right {
+	padding: 1rem;
+	width: 75%;
+}
+.light {
+	margin: 0.25rem, 0;
+	font-size: 0.9rem;
+	color: #607d8b;
+}
+
+@media only screen and (max-width: 1024px) {
+	.left {
+		width: 100%;
+	}
+	.left pre {
+		width: 100%;
+	}
+	.right {
+		width: 100%;
+	}
+}
+
 //Todo put focus pseudo element to dark-mode-toggle

@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { useQuery, gql } from "@apollo/client";
-import styles from "styles/Home.module.css";
 import { print } from "graphql/language/printer";
 import { format } from "date-fns";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import prismStyle from "react-syntax-highlighter/styles/prism/base16-ateliersulphurpool.light";
 import DarkModeToggle from "../components/DarkModeToggle";
+import YingYang from "../components/svg-icons/YinYang";
 const ResumeQuery = gql`
 	query {
 		bio {
@@ -37,25 +37,28 @@ export default function Home() {
 	}
 	if (loading)
 		return (
-			<header className={styles.loading}>
-				<h2>Loading...</h2>
+			<header className="loading">
+				<YingYang width="50px" height="50px" />
 			</header>
 		);
 
 	const { bio, positions } = data;
 	return (
-		<div className={styles.container}>
+		<div className="container">
 			<Head>
-				<title>ryuki-gql-resume</title>
-				<link rel="icon" href="/favicon.ico" />
+				<title>ryuki-resume</title>
+				<link
+					rel="icon"
+					href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐉</text></svg>"
+				/>
 			</Head>
-			<header className={styles.header}>
-				<h1>{bio.name}</h1>
-				<h2>{bio.tagline}</h2>
+			<header className="header">
 				<DarkModeToggle />
 			</header>
-			<div className={styles.split}>
-				<div className={styles.left}>
+			<div className="split">
+				<div className="left">
+					<h1>{bio.name}</h1>
+					<h2>{bio.tagline}</h2>
 					<h2>Contact</h2>
 					<p>
 						<strong>Email</strong>{" "}
@@ -77,7 +80,7 @@ export default function Home() {
 						{print(ResumeQuery)}
 					</SyntaxHighlighter>
 				</div>
-				<div className={styles.right}>
+				<div className="right">
 					<h1>Experience</h1>
 					{positions.map((position) => {
 						console.log(position);
@@ -90,15 +93,14 @@ export default function Home() {
 						return (
 							<div key={position.id}>
 								<h2>{position.title}</h2>
-								<p className={styles.light}>
+								<p className="light">
 									{position.company} | {position.location}
 								</p>
-								<p className={styles.light}>
+								<p className="light">
 									{format(new Date(position.startDate), "MMM-yyyy")} -{" "}
 									{position.endDate
 										? format(new Date(position.endDate), "MMM-yyyy")
-										: "Current"}
-									({length})
+										: "Present"}
 								</p>
 								<ul>
 									{position.achievements.map((achievement) => (
